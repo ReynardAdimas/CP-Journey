@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"d:\\tugas\\CP Journey\\VJUDGE\\A.cpp","tests":[{"id":1715485796393,"input":"0 1 0 1 2 2 0 0 1\n1 1 0 0 0 0 1 0\n","output":"5\n"},{"id":1715485810325,"input":"0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0\n","output":"1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\tugas\\CP Journey\\VJUDGE\\A.cpp","group":"local","local":true}
