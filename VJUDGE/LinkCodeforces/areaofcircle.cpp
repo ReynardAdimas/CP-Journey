@@ -3,15 +3,14 @@ using namespace std;
 
 void solution()
 {
-    int a,b,c,d; 
-    int ans = 0;
-    cin >> a >> b >> c >> d; 
-    for(int i=a;i<=b;i++)
-    {
-        if(i%c!=0 && i%d!=0) ans++;
-    }
-    cout << ans << endl;
+    const double phi = 3.141592653; 
+    double r; 
+    cin >> r;
+    double ans = phi*r*r;
+    cout << fixed << setprecision(9) << ans << endl; 
 }
+
+
 int main()
 {
     ios_base::sync_with_stdio(false);
