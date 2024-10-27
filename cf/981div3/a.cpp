@@ -3,7 +3,10 @@ using namespace std;
 
 void solution()
 {
-    cout << "Hello World" << endl;
+    int n; 
+    cin >> n; 
+    if(n%2) cout << "Kosuke" << endl;
+    else cout << "Sakurako" << endl;
 }
 
 

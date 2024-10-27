@@ -1,20 +1,49 @@
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std; 
 
-int f(int a, int b)
+void solution()
 {
-    if(b==0) return 1; 
-    int res = f(a,b/2); 
-    if(b%2) return res*res*a; 
-    else return res*res;
+    int n,k;
+    int minim = INT_MAX;
+    vector<int> v; 
+    cin >> n >> k;
+    for(int i=0;i<n;i++)
+    {
+        int a;
+        cin >> a; 
+        if(a < minim) minim = a;
+        v.push_back(a);
+    } 
+    for(int i=0;i<k;i++)
+    {
+        if(v[i]==a) 
+        {
+            a++; 
+            if(v[i-1] < v[i+1]) 
+            {
+                v[i-1]++;
+            }
+            else 
+            {
+                v[i+1]++;
+            }
+        }
+    }    
+    int result = 0;
+    for(int i=0;i<n;i++)
+    {
+        int temp = v[i]*v[i+1];
+        result += temp;
+    }
+    cout << result << endl;
 }
+
 
 int main()
 {
-    int a,b,c,n; 
-    cin >> a >> b >> c >> n;
-    int hasil1 = f(b,c); 
-    int hasil2 = f(a,hasil1); 
-    int hasil3 = hasil2%n; 
-    cout << hasil3+1 << endl;
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(0);
+    solution();
+    return 0;
 }
