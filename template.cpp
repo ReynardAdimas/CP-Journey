@@ -13,7 +13,7 @@ int main()
     cin.tie(nullptr);
     cout.tie(0);
     int t;
-    //t = 0;
+    //t = 1;
     cin >> t;
     while(t--)
     {
