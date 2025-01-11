@@ -1,26 +1,32 @@
 #include<bits/stdc++.h>
 using namespace std; 
 
-void generateSubarrays(int arr[], int subarray[], int n, int index, int subIndex) {
-    if (subIndex > 0) {
-        sort(subarray, subarray + n, greater<int>()); 
-        cout << subarray[0] << " ";
+vector<int> v;
+
+int fibo(int x)
+{
+    if(x==0)
+    {
+        return 0;
+        v.push_back(0);
     }
-    for (int i = index; i < n; i++) {
-        subarray[subIndex] = arr[i];
-        generateSubarrays(arr, subarray, n, i + 1, subIndex + 1);
+    else if(x==1)
+    {
+        return 2;
+        v.push_back(2);
     }
+    else
+    {
+        v.push_back(fibo(x-1) + fibo(x-2));
+    }
+    return v[x];
 }
 
 void solution()
 {
-    int n;
+    int n; 
     cin >> n; 
-    int arr[n];
-    int subarray[n];
-    for(int i=0;i<n;i++) cin >> arr[i]; 
-    generateSubarrays(arr,subarray,n,0,0);
-    cout << endl;
+    cout << fibo(n) << endl;
 }
 
 
@@ -30,8 +36,8 @@ int main()
     cin.tie(nullptr);
     cout.tie(0);
     int t;
-    //t = 1;
-    cin >> t;
+    t = 1;
+    //cin >> t;
     while(t--)
     {
         solution();

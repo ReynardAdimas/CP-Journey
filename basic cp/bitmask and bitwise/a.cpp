@@ -3,7 +3,10 @@ using namespace std;
 
 void solution()
 {
-   cout << "Hello World" << endl;
+    // bitwise and 
+    int a = 12; 
+    int b = 25; 
+    
 }
 
 
@@ -13,8 +16,8 @@ int main()
     cin.tie(nullptr);
     cout.tie(0);
     int t;
-    t = 1;
-    //cin >> t;
+    //t = 1;
+    cin >> t;
     while(t--)
     {
         solution();

@@ -3,9 +3,8 @@ using namespace std;
 
 void solution()
 {
-   cout << "Hello World" << endl;
+    
 }
-
 
 int main()
 {
@@ -13,8 +12,8 @@ int main()
     cin.tie(nullptr);
     cout.tie(0);
     int t;
-    t = 1;
-    //cin >> t;
+    //t = 1;
+    cin >> t;
     while(t--)
     {
         solution();
