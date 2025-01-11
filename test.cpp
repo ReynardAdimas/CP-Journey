@@ -1,27 +1,64 @@
-#include <bits/stdc++.h>
-using namespace std;
-void generateSubarrays(int arr[], int subarray[], int n, int index, int subIndex) {
-    // Cetak subarray saat ini jika tidak kosong
-    if (subIndex > 0) {
-        for (int i = 0; i < subIndex; i++) {
-            sort(subarray, subarray+n);
-            cout << subarray[0]+1 << " ";
+#include<bits/stdc++.h>
+using namespace std; 
+
+// Fungsi untuk menghitung GCD dari dua bilangan
+int gcd(int a, int b) {
+    if(a == 0) return b; 
+    return gcd(b % a, a);
+}
+
+// Fungsi untuk menemukan GCD dari seluruh elemen array
+int findGcd(int arr[], int n) {
+    int result = arr[0]; 
+    for(int i = 1; i < n; i++) {
+        result = gcd(arr[i], result);
+        if(result == 1) return 1; // GCD 1 berarti tidak ada faktor persekutuan kecuali 1
+    }
+    return result;
+}
+
+// Fungsi untuk mencari semua common divisors dari hasil GCD
+vector<int> findCommonDivisors(int gcdValue) {
+    vector<int> divisors;
+    for(int i = 1; i * i <= gcdValue; i++) {
+        if(gcdValue % i == 0) {
+            divisors.push_back(i); // Tambahkan faktor
+            if(i != gcdValue / i) 
+                divisors.push_back(gcdValue / i); // Tambahkan pasangan faktor jika berbeda
         }
     }
+    sort(divisors.begin(), divisors.end()); // Urutkan hasil
+    return divisors;
+}
 
-    // Rekursif untuk setiap elemen berikutnya di array
-    for (int i = index; i < n; i++) {
-        // Tambahkan elemen saat ini ke subarray
-        subarray[subIndex] = arr[i];
-        // Rekursif dengan elemen yang baru ditambahkan
-        generateSubarrays(arr, subarray, n, i + 1, subIndex + 1);
+void solution() {
+    int n; 
+    cin >> n; 
+    int arr[n]; 
+    for(int i = 0; i < n; i++) cin >> arr[i]; 
+    
+    // Cari GCD dari array
+    int gcdValue = findGcd(arr, n);
+    
+    // Cari semua faktor persekutuan (common divisors)
+    vector<int> divisors = findCommonDivisors(gcdValue);
+    
+    // Output semua common divisors
+    for(int d : divisors) {
+        cout << d << " ";
     }
+    cout << endl;
 }
 
 int main() {
-    int arr[] = {1, 2, 3};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int subarray[n]; // Array sementara untuk menampung subarray
-    generateSubarrays(arr, subarray, n, 0, 0);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(0);
+    
+    int t;
+    t = 1; // Ubah menjadi `cin >> t` jika ada beberapa test case
+    while(t--) {
+        solution();
+    }
     return 0;
 }

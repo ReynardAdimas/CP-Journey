@@ -3,7 +3,16 @@ using namespace std;
 
 void solution()
 {
-   cout << "Hello World" << endl;
+  long long l,r; 
+  cin >> l >> r;
+  if(2LL*l<=r)
+  {
+    cout << l << " " << 2LL*l << endl;
+  }
+  else 
+  {
+    cout << -1 << " " << -1 << endl;
+  }
 }
 
 
@@ -13,8 +22,8 @@ int main()
     cin.tie(NULL);
     cout.tie(0);
     int t;
-    t = 1;
-    //cin >> t;
+    //t = 1;
+    cin >> t;
     while(t--)
     {
         solution();
