@@ -15,33 +15,40 @@ void solution()
    int maks = *max_element(v.begin(), v.end()); 
    int minim = *min_element(v.begin(), v.end());
    int posmax, posmin; 
-   for(int i=1;i<=n;i++)
+   if(maks==v[0] && minim == v[n-1])
    {
-     if(v[i]==minim)
-     {
-        posmin = i;
-     }
-   }
-   for(int i=n-1;i>=1;i--)
-   {
-    if(v[i]==maks)
-    {
-        posmax=i;
-    }
-   } 
-   int ans = 0;
-   if(posmax < posmin)
-   {
-    ans+=posmax-1; 
-    ans+=abs(posmin-n);
+    cout << 0 << endl;
    }
    else 
    {
+    for(int i=0;i<n;i++)
+    {
+        if(v[i]==minim)
+        {
+            posmin = i+1;
+        }
+    }
+    for(int i=n-1;i>=0;i--)
+    {
+        if(v[i]==maks)
+        {
+            posmax=i+1;
+        }
+    } 
+    int ans = 0;
+    if(posmax < posmin)
+    {
         ans+=posmax-1; 
-     ans+=abs(posmin-n);
-     ans-=1;
+        ans+=abs(posmin-n);
+    }
+    else 
+    {
+            ans+=posmax-1; 
+        ans+=abs(posmin-n);
+        ans-=1;
+    }
+    cout << ans << endl;
    }
-   cout << ans << endl;
 }
 
 
