@@ -3,7 +3,16 @@ using namespace std;
 
 void solution()
 {
-   
+   int n;
+   cin >> n; 
+   if(n%2==1)
+   {
+    cout << "Ehab" << endl;
+   }
+   else 
+   {
+    cout << "Mahmoud" << endl;
+   }
 }
 
 
@@ -13,8 +22,8 @@ int main()
     cin.tie(NULL);
     cout.tie(0);
     int t;
-    //t = 1;
-    cin >> t;
+    t = 1;
+    //cin >> t;
     while(t--)
     {
         solution();

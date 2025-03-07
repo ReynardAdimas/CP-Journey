@@ -3,7 +3,19 @@ using namespace std;
 
 void solution()
 {
-   
+   string s; 
+   cin >> s;
+   if(s=="us")
+   {
+    cout << "i" << endl;
+   }
+   else
+   {
+    int idx = s.length()-2; 
+    s.erase(idx);
+    s+='i';
+    cout << s << endl;
+   }
 }
 
 

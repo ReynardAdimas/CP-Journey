@@ -3,7 +3,18 @@ using namespace std;
 
 void solution()
 {
-   
+   int x,y,k;
+   cin >> x >> y >> k;
+   int A = (x+k-1)/k; // ceil
+   int B = (y+k-1)/k; // ceil
+   if(A<=B)
+   {
+    cout << 2*B << endl;
+   }
+   else
+   {
+    cout << 2*A-1 << endl;
+   }
 }
 
 

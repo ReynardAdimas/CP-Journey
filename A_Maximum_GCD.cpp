@@ -1,9 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std; 
 
+int gcd(int a, int b)
+{
+    
+}
+
 void solution()
 {
-   
+   int n; 
+   cin >> n; 
+   int maks = INT_MIN;
+   for(int i=1;i<=n;i++)
+   {
+    for(int j=i+1;j<=n;j++)
+    {
+        int temp = __gcd(i,j); 
+        maks = max(temp, maks);
+    }
+   }
+   cout << maks << endl;
 }
 
 

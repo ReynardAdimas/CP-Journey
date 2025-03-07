@@ -1,65 +1,57 @@
 #include<bits/stdc++.h>
 using namespace std; 
+const int N = 100000+5; 
+vector<int> adj[N]; 
+bool vis[N]; 
+int counter = 0;
 
-vector<int> adj[100]; 
-stack<int> dfs; 
-bool visited[100];
-
-int main()  
+void traverse(int v)
 {
-    // contoh kasus 
-    // diberikan sebuah graf 
-    // cek apakah dari start bisa mencapai finish ? 
-    int n,e; 
-    cin >> n >> e; 
-    for (int i = 0; i < e; i++)
+    vis[v] = true; 
+    counter++;
+    for(int u:adj[v])
     {
-        int u,v; // u dan v menyatakan u terhubung ke v, v terhubung ke u (undirectional graph) 
+        if(!vis[u])
+        {
+            traverse(u);
+        }
+    }
+}
+
+void solution()
+{
+    int n,m; 
+    cin >> n >> m; 
+    for(int i=0;i<N;i++) vis[i] = false;
+    for(int i=0;i<m;i++)
+    {
+        int u,v; 
         cin >> u >> v; 
         adj[u].push_back(v); 
         adj[v].push_back(u);
     } 
-    int start,finish; 
-    cin >> start >> finish; 
-
-    // DFS alghorithm
-    // pertama kunjungi start
-    dfs.push(start);
-    visited[start] = true; 
-    // selama masih belum ada yang dikunjungi
-    while(!dfs.empty())
-    {
-        // ambil satu node yang kita belum kunjungi
-        int cur = dfs.top(); 
-        dfs.pop();
-        // untuk melihat urutan node yang sedang dikunjungi
-        cout << cur << endl;
-        // untuk semua tetangga node ini
-        for(auto next:adj[cur])
-        {
-            // jika belum pernah dikunjungi
-            if(!visited[next])
-            {
-                // coba kunjungi
-                visited[next]=true; 
-                dfs.push(next);
-            }
-        }
-    }
-    cout << "finish : " << visited[finish] << endl; // jika keluar 1 maka node finish terkunjungi, jika 0 belum terkunjungi(tidak terhubung)
-
-    // untuk menghitung ada berapa CC(Connected Component)
-    int ans = 0;
+     
+    traverse(1);
+    int ans = 0; 
     for(int i=0;i<n;i++)
     {
-        if(!visited[i])
-        {
-            ans++;
-            // coba dfs dari i
-        }
-    } 
-    cout << "ans:  " << ans << endl;
+        if(!vis[i]) ans++; // count cycle graph
+    }
+    cout << ans << endl;
+}
 
 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(0);
+    int t;
+    t = 1;
+    //cin >> t;
+    while(t--)
+    {
+        solution();
+    }
     return 0;
 }

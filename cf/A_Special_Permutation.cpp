@@ -3,9 +3,14 @@ using namespace std;
 
 void solution()
 {
-   
+    int n;
+    cin >> n;
+    for(int i=n-1;i>=0;i--)
+    {
+        cout << i+1 << " ";
+    }
+    cout << endl;
 }
-
 
 int main()
 {

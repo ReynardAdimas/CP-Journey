@@ -3,7 +3,25 @@ using namespace std;
 
 void solution()
 {
-   
+   string s;
+   cin >> s;
+   bool cek = false;
+   for(int i=0;i<s.length();i++)
+   {
+    if(s[i]==s[i+1])
+    {
+        cek=true;
+        break;
+    }
+   }
+   if(cek)
+   {
+    cout << 1 << endl;
+   }
+   else
+   {
+    cout << s.length() << endl;
+   }
 }
 
 
