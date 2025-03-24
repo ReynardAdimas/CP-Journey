@@ -1,43 +1,19 @@
-#include <bits/stdc++.h>
+#include<iostream> 
 using namespace std; 
-
-void solution()
+void hanoi(int n, char asal, char tujuan, char lewat)
 {
-    string s; 
-    cin >> s; 
-    vector<int> v;
-    int cnt = 1;  // Mulai dari 1 karena karakter pertama sudah dihitung
-
-    for(int i = 0; i < s.length() - 1; i++)
-    {
-        if(s[i] == s[i + 1])
-        {
-            cnt++; 
-        }
-        else 
-        {
-            v.push_back(cnt);
-            cnt = 1; // Reset cnt ke 1 untuk karakter baru
-        }
-    }
-    v.push_back(cnt); // Masukkan jumlah terakhir ke dalam v
-
-    for(int num : v)
-    {
-        cout << num << endl;  // Gunakan endl untuk format sesuai permintaan
-    } 
+    if(n==0) return; 
+    hanoi(n-1, asal, lewat, tujuan); 
+    cout << "Gerak ke tower " << n << " dari tower " <<  asal << " ke tower " << tujuan << endl;
+    hanoi(n-1, lewat, tujuan, asal);
 }
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        solution();
-    }
+    int t=3; char a,b,c; 
+    cout << "Masukkan tower pertama : "; cin >> a;
+    cout << "Masukkan tower kedua : "; cin >> b;
+    cout << "Masukkan tower ketiga : "; cin >> c; 
+    hanoi(t, a,b,c); 
     return 0;
 }

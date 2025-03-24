@@ -1,0 +1,1 @@
+{"name":"Local: buildingRoads","url":"d:\\Coding\\CP Journey-20240908T122952Z-001\\CP Journey\\cses\\buildingRoads.cpp","tests":[{"id":1741680674843,"input":"4 2\n1 2\n3 4","output":"1\n2 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Coding\\CP Journey-20240908T122952Z-001\\CP Journey\\cses\\buildingRoads.cpp","group":"local","local":true}
