@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void solution()
+{
+   int n,k; 
+   cin >> n >> k; 
+   vector<int> v(n); 
+   for(int i=0;i<n;i++) cin >> v[i]; 
+   if(is_sorted(v.begin(), v.end()) || k >1)
+   {
+    cout << "YES" << endl;
+   } 
+   else 
+   {
+    cout << "NO" << endl;
+   }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(0);
+    int t;
+    //t = 1;
+    cin >> t;
+    while(t--)
+    {
+        solution();
+    }
+
+    return 0;
+}
