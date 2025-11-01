@@ -7,26 +7,9 @@ void solution()
    int a,b;
    int curr = 0; 
    cin >> n >> m >> l >> r; 
-   if(m-(curr-l)>0)
-   {
-    a=l;
-    b = curr + (m-curr-l);
-   }
-   if(m-(curr-l)<0)
-   {
-    if(l >= m-(curr-l))
-    {
-        a = m-(curr-l);
-        b = curr;
-    }
-    
-   }
-   else 
-   {
-    a=l;
-    b=curr;
-   }
-   cout << a << " " << b << endl;
+   int l1 = max(l, -m); 
+   int r1 = l1+m; 
+   cout << l1 << " " << r1 << '\n';
 }   
 
 

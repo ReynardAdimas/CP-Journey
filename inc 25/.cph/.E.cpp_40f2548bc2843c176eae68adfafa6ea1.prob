@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"d:\\Coding\\CP Journey-20240908T122952Z-001\\CP Journey\\inc 25\\E.cpp","tests":[{"id":1761457020806,"input":"4 2\n+ 3\nx 5\nx 9\n+ 15\n2 + 8\n1 x 10","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Coding\\CP Journey-20240908T122952Z-001\\CP Journey\\inc 25\\E.cpp","group":"local","local":true}
